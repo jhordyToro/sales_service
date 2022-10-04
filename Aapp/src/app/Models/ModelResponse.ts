@@ -1,5 +1,5 @@
 export interface ModelResponse {
-    Exito: number;
-    Message: string;
-    Data: any;
+    exito: number;
+    message: string;
+    data: any;
 }

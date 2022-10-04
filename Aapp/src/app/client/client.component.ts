@@ -7,16 +7,21 @@ import { ApiclientService } from '../service/apiclient.service';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
+  
+  public lst: any[] = [];
 
   constructor(
     private apiClient: ApiclientService
   ) 
-  { 
-    apiClient.getClient().subscribe( response => { console.log(response) } )
-  }
+  { }
   
 
   ngOnInit(): void {
+    this.getClient();
+  }
+
+  getClient() {
+    this.apiClient.getClientService().subscribe( response => { this.lst = response.data; } );
   }
 
 }

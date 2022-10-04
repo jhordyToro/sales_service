@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ModelResponse } from "../Models/ModelResponse";
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,11 @@ import { Observable } from 'rxjs';
 export class ApiclientService {
 
   url: string = "https://localhost:7043/api/client";
-  constructor(
-    private _http: HttpClient
-  ) { }
-    getClient(): Observable<Response> {
+  constructor( 
+    private _http: HttpClient 
+    ) { }
+    getClientService(): Observable<ModelResponse> {
 
-      return this._http.get<Response>(this.url);
+      return this._http.get<ModelResponse>(this.url);
   }
 }
